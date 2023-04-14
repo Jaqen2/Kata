@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
+
     private static String sign;
     private static boolean isRoman;
     private static final String ROMAN = "^(X|IX|IV|V?I{0,3})\\s?[\\-+/*]\\s?(X|IX|IV|V?I{0,3})$";
@@ -93,8 +94,8 @@ public class Main {
     }
     public static String IntToRoman(int num)
     {
-        var keysRoman = new String[] { "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
-        var valuesArabic = new int[] { 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+        String[] keysRoman = new String[] { "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
+        int[] valuesArabic = new int[] { 100, 90, 50, 40, 10, 9, 5, 4, 1 };
 
         StringBuilder result = new StringBuilder();
         int tmp = 0;
@@ -103,7 +104,7 @@ public class Main {
         {
             while(num >= valuesArabic[tmp])
             {
-                var d = num / valuesArabic[tmp];
+                int d = num / valuesArabic[tmp];
                 num = num % valuesArabic[tmp];
                 for(int i=0; i<d; i++)
                     result.append(keysRoman[tmp]);
